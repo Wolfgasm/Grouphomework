@@ -14,9 +14,13 @@ namespace GroupHomework
 
             //建立一個空的List
             List<string> member = new List<string>();
-      
+            //提示使用者輸入一組要分幾個人
+            Console.Write("請輸入一組要分幾個人");
+            //讀取使用者輸入的數字
+            int groupIndex = int.Parse(Console.ReadLine());
+            
 
-            // = =......dafuq
+            // = =......dafuq(將班上人名存入此陣列)
             string[] memberName = new string[] { "葉俊廷", "張澤瑜", "王程捷", "江儀婷", "張秉華", "陳柏霖", "黃紀瑜",
                 "黃昱維", "蔡逸群", "登琳", "世新魏鈞孝吧", "劉定南", "陳信如", "童信傑", "李岳倫", "鄒和恆", "簡毓玟", "劉子瑄", "蕭紹洋", "李亞宸la", "張以潔",
                 "邱仕紳", "呂家瑩", "世新林鑫佑", "徐均得", "陳佳欣", "張恩瑋", "周詮", "王湘婷", "蕭宇成", "Max Cheung(BANG)", "馬嘉誠Σヽ(ﾟД ﾟ; )", "陳昱嘉",
@@ -25,19 +29,19 @@ namespace GroupHomework
                 "世新李姳諼", "鄭曼君", "陳柏霖", "世新許子安", "世新方若帆", "李曼寧", "世新張豐愷", "世新遲正雯", "世新周詮" };
 
              //在List裡放入班上人名  
-            for (int i = 0; i < 66; i++)
+            for (int i = 0; i < memberName.Length; i++)
             {
                 member.Add(memberName[i]);
             }
 
             //每跑完六個人名就利用WriteLine換行並增加顯示第幾組
-            for (int a = 1; a <= 11; a++)
+            for (int a = 1; a <=memberName.Length/groupIndex; a++)
             {
 
                 // 產生亂數物件
                 Random rand = new Random();
 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < groupIndex; i++)
                 {
                     //隨機挑選一個數字放入r變數
                     int r = rand.Next(1, member.Count);
